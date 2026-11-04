@@ -1,0 +1,153 @@
+@use "@/app/styles/variables" as *;
+
+.hero {
+  background-color: #fdc0d0;
+  background-image: url('/bg-hero.webp');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  font-size: 18px;
+  position: relative;
+  box-shadow: 0 5px 15px #fdc0d0;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+  }
+
+  &::before {
+    top: 0;
+    left: 40px;
+    width: 279px;
+    height: 500px;
+    background-image: url('/bg-dolls-left.webp');
+  }
+
+  &::after {
+    bottom: 0;
+    right: 0;
+    width: 429px;
+    height: 400px;
+    background-image: url('/bg-dolls-right.webp');
+  }
+
+  &__content {
+    padding: 35px 350px 5px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    min-height: 500px;
+  }
+
+  &__heading {
+    background-image: url('/heading.webp');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    text-indent: -9999px;
+    overflow: hidden;
+    display: block;
+    width: 424px;
+    height: 200px;
+    margin: 0 auto 10px;
+  }
+
+  h1 {
+    text-shadow: 0 2px 5px #fff;
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+
+  &__features {
+    font-weight: 500;
+    
+    li {
+      padding: 0 10px 15px;
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+}
+
+@media (max-width: $desktop) {
+  .hero {
+    &__content {
+      padding-left: 175px;
+      padding-right: 175px;
+      min-height: auto;
+    }
+    
+    &::before {
+      width: 168px;
+      height: 300px;
+      left: 0;
+    }
+    
+    &::after {
+      width: 215px;
+      height: 200px;
+    }
+
+    &__heading {
+      width: 318px;
+      height: 150px;
+    }
+
+    h1 {
+      font-size: 26px;
+    }
+  }
+}
+
+@media (max-width: $tablet-lg) {
+  .hero {
+    &__content {
+      padding-left: 120px;
+      padding-right: 120px;
+    }
+
+    &::after {
+      right: -40px;
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .hero {
+    font-size: 16px;
+
+    &__content {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &::before {
+      width: 67px;
+      height: 120px;
+      top: 15px;
+      left: 50%;
+      margin-left: -170px;
+      margin-top: 0;
+    }
+    &::after {
+      width: 107px;
+      height: 100px;
+      top: 30px;
+      right: 50%;
+      margin-right: -195px;
+      bottom: auto;
+    }
+
+    &__heading {
+      width: 200px;
+      height: 94px;
+    }
+
+    h1 {
+      font-size: 22px;
+    }
+  }
+}

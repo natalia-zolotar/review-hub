@@ -1,0 +1,45 @@
+@use "@/app/styles/variables" as *;
+
+.main {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+}
+
+.column__left {
+  flex: 1;
+}
+.column__right {
+  width: 430px;
+  max-width: 40%;
+  padding-left: 30px;
+}
+
+.sidebar__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 30px;
+}
+
+@media (max-width: $tablet) {
+  .content {
+    flex-direction: column;
+  }
+
+  .column__right {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 0;
+  }
+
+  .main {
+    padding-top: 110px;
+    padding-bottom: 0;
+  }
+}
